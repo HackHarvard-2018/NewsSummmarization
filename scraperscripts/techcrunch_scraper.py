@@ -123,13 +123,13 @@ if __name__ == '__main__':
                 'redirectionUrl': article.get_articleurl(),
                 'titleText': article.get_header(),
                 'uid': uuid.uuid1().__str__(),
-                'updateDate': dt(curr_time.year, curr_time.month, curr_time.day, curr_time.hour, curr_time.minute, curr_time.second, tzinfo=pytz.utc).strftime(fmt)
+                'updateDate': dt(dt.utcnow().year, dt.utcnow().month, dt.utcnow().day, dt.utcnow().hour, dt.utcnow().minute, dt.utcnow().second, tzinfo=pytz.utc).strftime(fmt)
             }
             print(type(article_data))
             print(article_data)
             all_articles.append(article_data)
         # except:
         #     print("Error in calling API!")
-    db.child("techcrunch").set(all_articles)
+    db.child("technology").set(all_articles)
 
     print("Done with scraping and pushing to Firebase!")

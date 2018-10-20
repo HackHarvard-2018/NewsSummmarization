@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
     all_articles = []
     headers = {'content-type': 'application/json'}
-    for article in pool1[:5]:
+    for article in pool1[:3]:
         # try:
             data = {
                 'articles': [

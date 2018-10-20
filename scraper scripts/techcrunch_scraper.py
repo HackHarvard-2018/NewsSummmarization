@@ -1,3 +1,7 @@
+# For directory management
+import sys
+sys.path.insert(0, '../')
+
 # Imports firebase
 import pyrebase
 from config import config
